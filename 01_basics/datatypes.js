@@ -45,6 +45,14 @@ let sym1 = Symbol("sym")
 let sym2 = Symbol("sym")
 console.log(sym1 === sym2) //false because each symbol is unique
 
+//nan represents a value that is not a number
+let notANumber = NaN
+console.log(notANumber)
+
+//infinity represents a value that is greater than any other number
+let infinityValue = Infinity
+console.log(infinityValue)  
+
 //object is a collection of key-value pairs
 let person = {
     name: "Priyanshu",
