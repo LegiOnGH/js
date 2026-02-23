@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legion Codes</title>
+</head>
+<body style="background-color: black; color: white;">
+    <ul class = "Languages">
+        <li>JavaScript</li>
+    </ul>
+</body>
+<script>
+    // add elements to the DOM
+    function addLanguage(langName){
+        const li = document.createElement("li");
+        li.innerText = `${langName}`;
+        document.querySelector(".Languages").appendChild(li);
+    }
+    addLanguage("Python")
+    addLanguage("Java")
+
+    function optimalAddLanguage(langName){
+        const li = document.createElement("li");
+        li.appendChild(document.createTextNode(langName));
+        document.querySelector(".Languages").appendChild(li);
+    }
+    optimalAddLanguage("C++");
+    optimalAddLanguage("C#");
+
+    //edit elements in the DOM
+    const secondLang = document.querySelector("li:nth-child(2)");
+    //secondLang.innerHTML = "MOJO";
+    const newli = document.createElement("li");
+    newli.textContent = "MOJO"
+    secondLang.replaceWith(newli);
+
+    const firstLang = document.querySelector("li:first-child");
+    firstLang.outerHTML = "<li>TypeScript</li>";
+
+    //remove elements from the DOM
+    const lastLang = document.querySelector("li:last-child");
+    //lastLang.remove();
+    document.querySelector(".Languages").removeChild(lastLang);
+</script>
+</html>

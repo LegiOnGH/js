@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>  
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Legion Codes</title>
+</head>
+<body style="background-color: black; color: white;">
+</body>
+<script>
+    const div1 = document.createElement("div");
+    console.log(div1);
+    div1.className = "main";
+    div1.id = Math.round(Math.random() * 10 +1);
+    div1.setAttribute("title", "This is a div");
+    div1.style.backgroundColor = "green";
+    div1.style.padding = "20px";
+    //div1.innerText = "This is a div created using JavaScript";
+    const addText = document.createTextNode("Legion Codes");
+    div1.appendChild(addText);
+    document.body.appendChild(div1);
+</script>
+</html>
