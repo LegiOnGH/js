@@ -1,6 +1,6 @@
 const accountId = 14459 //use const for values that will not change and use let for values that will change
-let accountEmail = "abc@gmail.com"
-var accountPassword = "12345" //prefer not to use var becuase of its function scope and hoisting
+let accountEmail = "abc@gmail.com" //let allows us to reassign the value of accountEmail, while const does not allow reassignment and will throw an error if we try to reassign it.
+var accountPassword = "12345" //prefer not to use var because of its function scope and hoisting
 accountCity = "New York" //not recommended to declare variables without var, let or const because it creates a global variable and can lead to bugs and security issues
 let accountState //undefined because we have not assigned any value to accountState
 

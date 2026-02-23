@@ -13,14 +13,14 @@ console.log(balance + 500) // Output: 1500 - when we perform arithmetic operatio
 //  However, it is still recommended to use primitive number literals instead of the Number constructor to avoid any confusion or unexpected behavior when performing operations on numbers in JavaScript.
 
 console.log(balance.toString()) // Output: "1000" - the toString() method is used to convert a Number object to a string representation of the number. In this case, balance is converted to the string "1000" when we call balance.toString().
-console.log(balance.toFixed2) // Output: "1000.00" - the toFixed() method is used to format a number with a specified number of decimal places. In this case, balance is formatted to have 2 decimal places, resulting in the string "1000.00". Note that toFixed() returns a string representation of the number, not a number value.
+console.log(balance.toFixed(2)) // Output: "1000.00" - the toFixed() method is used to format a number with a specified number of decimal places. In this case, balance is formatted to have 2 decimal places, resulting in the string "1000.00". Note that toFixed() returns a string representation of the number, not a number value.
 
 const pi = 3.14159
 console.log(pi.toFixed(2)) // Output: "3.14" - the toFixed() method is used to format the number pi to have 2 decimal places, resulting in the string "3.14". Again, note that toFixed() returns a string representation of the number, not a number value.
 console.log(pi.toPrecision(3)) // Output: "3.14" - the toPrecision() method is used to format a number to a specified length, including both the integer and decimal parts. In this case, pi is formatted to have a total of 3 significant digits, resulting in the string "3.14". Note that toPrecision() also returns a string representation of the number, not a number value.      
 
 const newnum = 1000000
-console.log(newnum.toLocaleString('en-IN')) // Output: "10,00,000" - the toLocaleString() method is used to convert a number to a string representation that is formatted according to the locale settings of the user's environment. In this case, newnum is formatted with commas as thousands separators, resulting in the string "1,000,000". Note that the output may vary depending on the locale settings of the user's environment.
+console.log(newnum.toLocaleString('en-IN')) // Output: "10,00,000" - the toLocaleString() method is used to convert a number to a string representation that is formatted according to the locale settings of the user's environment. In this case, newnum is formatted with commas as thousands separators, resulting in the string "10,00,000". Note that the output may vary depending on the locale settings of the user's environment.
 
 //******************************************MATHS*****************************************
 console.log(Math) // Output: [object Math] - the Math object is a built-in object in JavaScript that provides properties and methods for performing mathematical operations. It is not a constructor, so we cannot create instances of it. Instead, we can use its properties and methods directly to perform various mathematical calculations in our code.

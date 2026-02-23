@@ -12,11 +12,11 @@
  console.log(numScore) //33
  console.log(typeof numScore) //number
 
-let isLoggedIn =1
+let isLoggedIn =10 //gives true because 10 is a truthy value, and it is converted to true when using Boolean constructor
 //let isLoggedIn = "" //gives false because empty string is a falsy value, and it is converted to false when using Boolean constructor
 // let isLoggedIn = "hii" //gives true because non-empty string is a truthy value, and it is converted to true when using Boolean constructor
 let booleanLoggedIn = Boolean(isLoggedIn) //explicit conversion using Boolean constructor
-console.log(booleanLoggedIn) //true because 1 is a truthy value, and it is converted to true when using Boolean constructor
+console.log(booleanLoggedIn) //true because 10 is a truthy value, and it is converted to true when using Boolean constructor
 console.log(typeof booleanLoggedIn) //boolean
 
 let num =  33

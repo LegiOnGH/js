@@ -5,9 +5,9 @@ console.log("2a">1) //false because of type coercion, "2a" cannot be converted t
 
 console.log(" ")
 
-console.log(2<1)
-console.log(2>=2)
-console.log(2<=2)
+console.log(2<1) //false
+console.log(2>=2) //true because 2 is equal to 2
+console.log(2<=2) //true because 2 is equal to 2
 
 console.log(" ")
 
@@ -22,10 +22,10 @@ console.log(" ")
 console.log(2!=3) //loose inequality operator, it checks for value inequality and performs type coercion if the types are different
 console.log(2!="2") //false because of type coercion, "2" is converted to 2 before comparison
 console.log(2!==3) //strict inequality operator, it checks for both value and type inequality, no type coercion is performed
+console.log(2!=="2") //true because the types are different, 2 is a number and "2" is a string
 
 console.log(" ")
 
-console.log(2!=="2") //true because the types are different, 2 is a number and "2" is a string
 console.log(null>0) //false because null is converted to 0 when using the > operator, and 0 is not greater than 0
 console.log(null==0) //false because null is only equal to undefined and not equal to any other value, even though null is converted to 0 when using the == operator, it does not consider them equal
 console.log(null>=0) //true because null is converted to 0 when using the >= operator, and 0 is greater than or equal to 0
