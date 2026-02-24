@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Legion Codes </h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>`
+</body>
+<script>
+    const sayDate = function(str){
+        console.log(str, new Date());
+    };
+    let interval = null; //declaring the interval variable outside the event listener functions so that it can be accessed and modified by both functions
+    document.getElementById("start").addEventListener('click', function(){
+        if(interval === null){
+            interval = setInterval(sayDate, 1000, "Current Date and Time:"); //the setInterval() method is a JavaScript method that is used to execute a function repeatedly after a specified number of milliseconds and it returns an interval ID that can be used to cancel the interval using the clearInterval() method
+        }
+    })
+
+    document.getElementById("stop").addEventListener('click', function(){
+        if(interval !== null){
+        clearInterval(interval); //stops the interval from executing the sayDate function every 1 second
+        interval = null; //reset the interval variable to null so that the start button can restart the interval
+        console.log("Interval stopped!")//stops the interval from executing the sayDate function every 1 second
+        }
+    })
+      
+</script>
+</html>

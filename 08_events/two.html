@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> Legion Codes </h1>
+    <button id="stop">Stop</button>
+</body>
+<script>
+    const sayLegion = function(){
+        console.log("Legion")
+    };
+
+    const ChangeText = function(){
+        document.querySelector("h1").innerHTML = "Legion was Here!"
+    };
+
+    const changeIt = setTimeout(ChangeText, 1000); //the setTimeout() method is a JavaScript method that is used to execute a function after a specified number of milliseconds and it returns a timeout ID that can be used to cancel the timeout using the clearTimeout() method
+    document.getElementById("stop").addEventListener("click", function(){
+        clearTimeout(changeIt); //stops the timeout from executing the ChangeText function after 1 second
+        console.log("Timeout stopped!");
+    });
+</script>
+</html>             
