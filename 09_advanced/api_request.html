@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> API Request</h1>  
+    <!---Status codes for xml 
+            0: UNSENT - the request has not been sent yet
+            1: OPENED - the request has been opened but not sent yet, open() called
+            2: HEADERS_RECEIVED - the request has been sent and the headers have been received, send() called
+            3: LOADING - the request is in the process of being received, responseText holds the partial data, if any
+            4: DONE - the request has been completed and the response is ready
+
+        Status codes for HTTP response
+            100: Continue - the server has received the request headers and the client should proceed to send the request body
+            200: OK - the request has succeeded and the response is ready 
+            300: Multiple Choices - the request has more than one possible response and the user or user agent should choose one of them
+            400: Bad Request - the server cannot or will not process the request due to an apparent client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing)
+            500: Internal Server Error - the server encountered an unexpected condition that prevented it from fulfilling the request
+    --->
+</body>
+<script>
+    const requestURL = 'https://jsonplaceholder.typicode.com/todos/1'; //the URL of the API endpoint that we want to make a request to and it is a placeholder API that returns a JSON object with a todo item
+    const xhr = new XMLHttpRequest(); //creating a new instance of the XMLHttpRequest object which is used to make HTTP requests to a server and it is a built-in JavaScript object that is supported by all modern browsers
+    xhr.open('GET', requestURL)
+    xhr.onreadystatechange = function(){
+        console.log(xhr.readyState)
+        if(xhr.readyState === 4){
+            const data = JSON.parse(this.responseText); //the responseText property of the XMLHttpRequest object contains the response data as a string and it is only available when the readyState is 4 (DONE)
+            console.log(data.title)
+        }
+    }
+    xhr.send()
+</script>
+</html>
