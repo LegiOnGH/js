@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Events</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2> Images </h2>
+    <div>
+        <ul id = "images">
+            <li><img id = "crow" src="https://www.pexels.com/photo/eurasian-crow-in-fischen-im-allgau-forest-34214379/" alt="crow" width="200px"></li>
+            <li><img id = "dog" src="https://www.pexels.com/photo/golden-collie-on-a-sunny-spring-day-in-mar-del-plata-34396302/" alt="dog" width="200px"></li>
+            <li><img id = "sunset" src="https://www.pexels.com/photo/sunset-over-mediterranean-sea-with-silhouette-boat-36142511/" alt="sunset" width="200px"></li>
+            <li><img id = "cat" src="https://www.pexels.com/photo/close-up-shot-of-a-tabby-cat-10788003/" alt="cat" width="200px"></li>
+            <li><img id = "pond" src="https://www.pexels.com/photo/aerial-view-of-yin-yang-pond-in-lush-forest-35962569/" alt="pond" width="200px"></li>
+            <li><img id = "jellyfish" src="https://www.pexels.com/photo/ethereal-jellyfish-dance-in-dark-waters-34247661/" alt="jellyfish" width="200px"></li>
+            <li><img id = "leopard" src="https://www.pexels.com/photo/clouded-leopard-resting-on-a-mossy-log-in-a-forest-36113085/" alt="leopard" width="200px"></li>
+            <li><a style = "color: aliceblue;" href="https://www.google.com" id = "google">Google</a></li>
+        </ul>
+    </div>
+    
+</body>
+<script>
+    //types of events: click, mouseover, mouseout, mousemove, keydown, keyup, submit, change, load, unload, etc.
+    //timestamp: the time when the event occurred
+    //default behavior: the default behavior of an event is the behavior that occurs when the event is triggered and it can be prevented by using the preventDefault() method
+    //defaultPrevented: a property of the event object that indicates whether the default behavior of the event has been prevented or not
+    //target: a property of the event object that refers to the element that triggered the event
+    //toElement: a property of the event object that refers to the element that the mouse pointer moved to during a mouseover or mouseout event
+    //srcElement: a property of the event object that refers to the element that the mouse pointer moved from during a mouseover or mouseout event
+    //currentTarget: a property of the event object that refers to the element that the event listener is attached to
+    //clientX: a property of the event object that refers to the horizontal coordinate of the mouse pointer relative to the viewport when the event occurred
+    //clientY: a property of the event object that refers to the vertical coordinate of the mouse pointer relative to the viewport when the event occurred
+    //screenX: a property of the event object that refers to the horizontal coordinate of the mouse pointer relative to the screen when the event occurred
+    //screenY: a property of the event object that refers to the vertical coordinate of the mouse pointer relative to the screen when the event occurred
+    //altKey: a property of the event object that indicates whether the Alt key was pressed when the event occurred
+    //ctrlKey: a property of the event object that indicates whether the Ctrl key was pressed when the event occurred
+    //shiftKey: a property of the event object that indicates whether the Shift key was pressed when the event occurred
+    //keyCode: a property of the event object that refers to the code of the key that was pressed during a keydown or keyup event
+    //event Bubbling: the process by which an event propagates from the target element to the parent elements in the DOM tree and it can be stopped by using the stopPropagation() method
+    //event Capturing: the process by which an event propagates from the parent elements to the target element in the DOM tree and it can be stopped by using the stopPropagation() method
+
+    //document.getElementById("cat").onclick = function() { //not recommended to use this method as it can be overwritten by other code and it can only have one event listener
+    //    alert("You clicked on the cat image!");
+    //}
+    document.getElementById("images").addEventListener("click", function(e) { //recommended method to use as it can have multiple event listeners and it cannot be overwritten by other code
+        console.log("You clicked inside the UL!");
+    },true); //the third parameter of the addEventListener() method is a boolean value that indicates whether the event should be captured or not and it is optional and it is false by default
+    //attachEvent is an old method that is only supported in Internet Explorer and it is not recommended to use it as it is not supported in modern browsers
+    //jQuery: on() method is a jQuery method that is used to attach event handlers to elements and it is recommended to use it as it can have multiple event listeners and it cannot be overwritten by other code
+    document.getElementById("dog").addEventListener("click", function(e) {
+        console.log("You clicked on the dog image!");
+        e.stopPropagation(); //stops the event from bubbling up to the parent elements in the DOM tree
+    },true);
+    document.getElementById("google").addEventListener("click", function(e) {
+        console.log("You clicked on the Google link!");
+        e.preventDefault(); //prevents the default behavior of the event which is to navigate to the Google website
+    });
+
+    document.querySelector("#images").addEventListener('click', function(e) {
+        console.log(e.target.tagName);//the tag name of the element that triggered the event
+        if(e.target.tagName === "IMG") { //checks if the element that triggered the event is an image
+            console.log(e.target.id) //the id of the element that triggered the event
+            let removeIt = e.target.parentNode; //the LI element that contains the image
+            removeIt.remove(); //removes the LI element that contains the image from the DOM tree
+        }
+        
+    }, true);
+    
+</script
+</html>
